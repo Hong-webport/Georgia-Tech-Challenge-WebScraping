@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mars Scraping</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="jumbotron" content="width=device-width, initial-scale=1.0">
+    <h1 class="display-4">Mars</h1>
+      <a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape</a>
+  </div>
+
+
+  <div class="container">
+  <div class="row"></div>
+    <h1>{{ mars_datalists.news_title }}</h1>
+    <p>{{ mars_datalists.news_content }}</p>
+
+  <div class="row">
+    <div class="col-8"></div>
+    <h1>Image</h1>
+    <img src="{{ mars_datalists.image_url }}" style="width: 1920px" alt="Featured Image">
+
+    <div class="col-4"></div>
+    <h1>Mars Facts</h1>
+    {{ mars_datalists.mars_table | safe }}
+  </div>
+
+  <div class="row">
+    <h1>Mars Hemisphere</h1>
+
+    <div class="container">
+
+      <div class="row">    
+
+        <div class="col-md-6">
+          <img src="{{ mars_datalists.hemisphere_image_urls[0].img_url }}" style="width: 480px" alt="Hem 1">
+          <h6>{{  mars_datalists.hemisphere_image_urls[0].title }}</h6>
+        </div>
+        <div class="col-md-6">
+          <img src="{{ mars_datalists.hemisphere_image_urls[1].img_url }}" style="width: 480px" alt="Hem 2">
+          <h6>{{  mars_datalists.hemisphere_image_urls[1].title }}</h6>
+        </div>
+
+      </div>
+
+      <div class="row">   
+
+        <div class="col-md-6">
+          <img src="{{ mars_datalists.hemisphere_image_urls[2].img_url }}" style="width:480px" alt="Hem 3">
+          <h6>{{  mars_datalists.hemisphere_image_urls[2].title }}</h6>
+        </div>
+
+        <div class="col-md-6">
+          <img src="{{ mars_datalists.hemisphere_image_urls[3].img_url }}" style="width: 480px" alt="Hem 4">
+          <h6>{{  mars_datalists.hemisphere_image_urls[3].title }}</h6>
+        </div>
+      </div>
+
+
+    </div>
+
+  </div>
+
+  </div>
+
+</body>
+
+</html>
+
